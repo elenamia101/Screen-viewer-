@@ -1,58 +1,84 @@
 * {
-    box-sizing: border-box;
-    }
+  box-sizing: border-box;
+}
 
 body {
-margin: 0;
-padding: 20px;
-background: #101827;
-color: white;
-font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 20px;
+  background: #101522;
+  color: #ffffff;
+  font-family: Arial, sans-serif;
 }
 
 .container {
-max-width: 500px;
-margin: auto;
+  max-width: 650px;
+  margin: 0 auto;
 }
 
 h1 {
-text-align: center;
-color: #60a5fa;
+  text-align: center;
+  font-size: 28px;
 }
 
-.card {
-background: #1e293b;
-padding: 20px;
-margin: 20px 0;
-border-radius: 14px;
+p {
+  line-height: 1.5;
 }
 
-video {
-width: 100%;
-min-height: 220px;
-background: black;
-border-radius: 10px;
+label {
+  display: block;
+  margin-top: 20px;
+  margin-bottom: 8px;
 }
 
-input, button {
-width: 100%;
-padding: 14px;
-margin-top: 12px;
-border: none;
-border-radius: 8px;
-font-size: 16px;
+input {
+  width: 100%;
+  padding: 14px;
+  border: 1px solid #65708a;
+  border-radius: 8px;
+  background: #ffffff;
+  color: #111111;
+  font-size: 16px;
+}
+
+.buttons {
+  display: grid;
+  gap: 10px;
+  margin-top: 15px;
 }
 
 button {
-background: #2563eb;
-color: white;
+  padding: 14px;
+  border: none;
+  border-radius: 8px;
+  background: #4263eb;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: bold;
 }
 
-.secondary {
-background: #475569;
+button:active {
+  opacity: 0.8;
 }
 
-.subtitle, .notice, #status {
-color: #cbd5e1;
-line-height: 1.5;
+#status {
+  padding: 12px;
+  margin-top: 18px;
+  background: #202a3e;
+  border-radius: 8px;
+  overflow-wrap: anywhere;
+}
+
+video {
+  display: block;
+  width: 100%;
+  min-height: 220px;
+  margin-top: 12px;
+  background: #000000;
+  border-radius: 8px;
+}
+
+.note {
+  margin-top: 20px;
+  color: #c5ccda;
+  font-size: 13px;
 }
