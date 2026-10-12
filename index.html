@@ -4,66 +4,48 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Phone Screen Viewer</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: #101827;
-      color: white;
-      text-align: center;
-      padding: 20px;
-    }
-.box {
-  background: #1e293b;
-  padding: 20px;
-  border-radius: 15px;
-  margin-top: 25px;
-}
-button {
-  background: #2563eb;
-  color: white;
-  border: none;
-  padding: 14px;
-  border-radius: 8px;
-  width: 100%;
-  margin-top: 12px;
-  font-size: 16px;
-}
-video {
-  width: 100%;
-  background: black;
-  border-radius: 10px;
-  margin-top: 15px;
-}
-p {
-  color: #cbd5e1;
-  line-height: 1.5;
-}
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>Phone Screen Viewer</h1>
-  <p>View another phone's screen with its owner's permission.</p>
-  <div class="box">
-    <h2>Screen Display</h2>
-    <video id="screen" autoplay playsinline controls></video>
-    <p id="status">Waiting for a connection...</p>
-  </div>
-  <div class="box">
-    <h2>Connection</h2>
-    <button onclick="connect()">Connect to Device</button>
-    <button onclick="disconnect()">Disconnect</button>
-  </div>
-  <script>
-    function connect() {
-      document.getElementById("status").textContent =
-        "Connection feature will be added next.";
-    }
-    function disconnect() {
-      const video = document.getElementById("screen");
-      video.srcObject = null;
-      document.getElementById("status").textContent =
-        "Disconnected.";
-    }
-  </script>
+  <main class="container">
+    <h1>Phone Screen Viewer</h1>
+
+    <p>
+      Connect two devices using the same room code.
+    </p>
+
+    <label for="roomCode">Room code</label>
+    <input
+      id="roomCode"
+      type="text"
+      placeholder="Enter a room code"
+      autocomplete="off"
+    >
+
+    <div class="buttons">
+      <button id="viewBtn">View a screen</button>
+      <button id="shareBtn">Share my screen</button>
+      <button id="disconnectBtn">Disconnect</button>
+    </div>
+
+    <p id="status">Not connected</p>
+
+    <h2>Remote screen</h2>
+
+    <video
+      id="remoteVideo"
+      autoplay
+      playsinline
+      controls
+    ></video>
+
+    <p class="note">
+      Screen sharing requires permission on the sharing device.
+      Keep your room code private.
+    </p>
+  </main>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
